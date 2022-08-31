@@ -95,7 +95,7 @@ botonFinalizar.addEventListener(`click`, () => {
     Swal.fire({
         icon: 'success',
         title: 'Compra finalizada',
-        text: 'Su pedido ya fue recibido y será enviado proximamente',
+        text: 'Su pedido ya fue recibido y el presupuesto será enviado proximamente a su e-mail',
         footer: '<p> ¡Muchas gracias por su compra!</p>'
       })
 
