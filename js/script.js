@@ -12,7 +12,7 @@ const Usuarios = []
 
 
 const formRegistrar = document.getElementById(`idForm`)
-
+// Obtengo la información del formulario, pusheo los nuevos usuarios al array vacío y guardo la info en el local storage
 formRegistrar.addEventListener(`submit`, (e) => {
     e.preventDefault()
 
@@ -25,6 +25,7 @@ formRegistrar.addEventListener(`submit`, (e) => {
 
     localStorage.setItem(`Usuarios`, JSON.stringify(Usuarios))
     formRegistrar.reset()
+   //creo un Toastify para que salte una alerta al apretar el botón
     Toastify({
         text: "¡Te has registrado!",
         duration: 3000,
@@ -46,7 +47,7 @@ formRegistrar.addEventListener(`submit`, (e) => {
 })
 
 const formIngresar = document.getElementById('formIngresar')
-
+// Comparo la info ingresada por el usuario con la info del local storage, si coincide le permito ingresar
 formIngresar.addEventListener('submit', (e) => {
     e.preventDefault()
     let nombreIngreso = document.getElementById('NombreIngreso').value

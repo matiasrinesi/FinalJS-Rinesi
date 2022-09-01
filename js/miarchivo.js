@@ -6,7 +6,7 @@ class Camiseta {
         this.nombre = nombre
     }
 }
-
+// Creo un array vació al cual se le van a agregar las distintas camisetas
 const camisetas = []
 
 
@@ -16,7 +16,7 @@ const divCamisetas = document.getElementById("divCamisetas")
 const botonPedidos = document.getElementById("botonPedidos")
 
 
-
+// Tomo la información del formulario, pusheo la nueva camiseta al array vacío y almaceno la información el el local storage
 formCamisetas.addEventListener(`submit`, (e) => {
     e.preventDefault()
     let datForm = new FormData(e.target)
@@ -50,7 +50,7 @@ formCamisetas.addEventListener(`submit`, (e) => {
 
 
 
-
+//Muestro las camisetas en el carrito mediante innerHTML obteniendo la información del local storage
 botonPedidos.addEventListener('click', () => {
     let arrayStorage = JSON.parse(localStorage.getItem('camisetas'))
     divCamisetas.innerHTML = "" // para no mostar muchas veces la misma camiseta
@@ -100,11 +100,6 @@ botonFinalizar.addEventListener(`click`, () => {
       })
 
 })
-
-
-
-
-
 
 
 

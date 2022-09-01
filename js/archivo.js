@@ -1,8 +1,8 @@
 const tablaCamisetas = document.getElementById("tablaCamisetas")
 const boton1 = document.getElementById("boton1")
-
-async function mostrarCamisetas() { // le pongo async para aclarar que va a haber elementos asincronos en la funcion
-    const camisetas = await fetch('./json/camisetas.json') // defino que algo es asincrono con await
+// creo la función para obtener informacion del archivo json y la muestro en el DOM mediante innerHTML
+async function mostrarCamisetas() { // Le pongo async para aclarar que va a haber elementos asincronos en la funcion
+    const camisetas = await fetch('./json/camisetas.json') // Defino que algo es asincrono con await
     const camisetasParseadas = await camisetas.json()
     tablaCamisetas.innerHTML = `
         <table class="table">
@@ -31,6 +31,7 @@ async function mostrarCamisetas() { // le pongo async para aclarar que va a habe
         </table>
     
     `
+    //Establezco las características que se van a mostrar en el DOM, para cada camiseta
     camisetasParseadas.forEach((camiseta, indice) => {
         tBody.innerHTML += `
 
@@ -51,7 +52,7 @@ async function mostrarCamisetas() { // le pongo async para aclarar que va a habe
 
 
 
-
+// Creo botón para ejecutar la función
 
 boton1.addEventListener('click', mostrarCamisetas)
 
